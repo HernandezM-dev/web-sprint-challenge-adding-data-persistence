@@ -1,38 +1,39 @@
-const db = require('../Data/db-config.js');
+const db = require('../data/db-config.js');
 
 module.exports = {
     addResource,
     findResources,
     addProject,
-    findProject,
-    addTask
+    findProjects,
+    addTask,
+    findTask
 };
 
 function addResource(resourceData){
     return db('resources').insert(resourceData)
+    .then(ids =>{
+        return resourceData
+    })
 }
 function findResources(){
-    return db("resources")
+    return db('resources')
 }
 function addProject(projectData){
     return db('projects').insert(projectData)
+    .then(ids =>{
+        return projectData
+    })
 }
-function findProject(){
+function findProjects(){
     return db("projects")
 }
 function addTask(taskData){
     return db('tasks').insert(taskData)
+    .then(ids =>{
+        return taskData
+    })
 }
 function findTask(id){
-    return db('tasks').where({project_id: id}).join('project.project_name', 'project.project_description').where({id: id})
-}
-
-
-
-function findIngredientsList(recipeId){
-    return db("ingredients_list").where({recipe_id: recipeId})
-}
-
-function findInstructions(recipeId){
-    return db("steps").where({recipe_id: recipeId})
+return db('tasks').join('projects', 'project_id', '=', 'projects.id')
+// .join('project.project_name', 'project.project_description').where({id: id})
 }
