@@ -1,0 +1,29 @@
+{
+  "name": "sprint",
+  "version": "1.0.0",
+  "description": "Sprint project for db design",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon ndex.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HernandezM-dev/web-sprint-challenge-adding-data-persistence.git"
+  },
+  "author": "Michael-Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HernandezM-dev/web-sprint-challenge-adding-data-persistence/issues"
+  },
+  "homepage": "https://github.com/HernandezM-dev/web-sprint-challenge-adding-data-persistence#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "knex": "^0.21.5",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
